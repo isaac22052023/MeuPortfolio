@@ -778,3 +778,147 @@ body {
     font-size: 15px;
     color: var(--color-purple);
 }
+
+
+    /* Ajuste para telas */
+@media screen and (max-width: 480px) {
+
+    .header {
+      flex-direction: column;
+      padding: 0;
+    }
+  
+    .navigation_header {
+      position: static;
+      width: 100%;
+      margin-left: 0;
+      animation: none;
+    }
+  
+    .btn_icon_header {
+      display: block;
+    }
+  
+    .content {
+      padding-top: 5em;
+    }
+  
+    .conteudo-de-apresentacao div h1 {
+      font-size: 3rem;
+      line-height: 4rem;
+    }
+  
+    .conteudo-de-apresentacao div h2 {
+      font-size: 1.5rem;
+    }
+  
+    .meu-nome {
+      margin-top: 8rem;
+    }
+  
+    .caixa-sobre h3 {
+      font-size: 1.5rem;
+    }
+  
+    .caixa-sobre h4 {
+      font-size: 1.2rem;
+    }
+  
+    .botao-curriculo {
+      margin: 3rem 0;
+    }
+  
+    .projetos-titulo h1 {
+      font-size: 2rem;
+    }
+  
+    .cartao-projetos {
+      height: auto;
+    }
+  
+    .img-projetos {
+      height: 200px;
+      width: 200px;
+    }
+  
+    .contato-conteudos h2 {
+      font-size: 2rem;
+    }
+  
+    .contato-icones-conteudo {
+      flex-direction: column;
+    }
+  
+    .contato-icone {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    /* Adjust the header */
+    .header {
+      padding: 0 2%;
+    }
+  
+    .navigation_header {
+      gap: 1em;
+    }
+  
+    .content {
+      padding-top: 3em;
+    }
+  
+    /* Adjust the first section */
+    .conteudo-de-apresentacao {
+      width: 100%;
+    }
+  
+    .presetation-background {
+      display: none;
+    }
+  
+    /* Adjust the second section */
+    #sobre {
+      flex-direction: column;
+    }
+  
+    .background-sobre {
+      width: 100%;
+      height: 50vh;
+    }
+  
+    .caixa-sobre {
+      width: 100%;
+      padding: 2rem;
+    }
+  
+    /* Adjust the third section */
+    .emrbrulho-projetos {
+      flex-direction: column;
+      height: auto;
+      margin-top: 0;
+    }
+  
+    .cartao-projetos {
+      width: 100%;
+      margin: 1rem 0;
+    }
+  
+    /* Adjust the fourth section */
+    #contato {
+      height: auto;
+    }
+  
+    .contato-conteudos h2 {
+      margin: 2rem 0;
+    }
+  
+    .contato-embrulho-icones {
+      flex-direction: column;
+    }
+  
+    .contato-icones-conteudo {
+      margin: 1rem 0;
+    }
+  }

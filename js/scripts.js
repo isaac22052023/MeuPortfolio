@@ -1,40 +1,61 @@
-/*header js*/
-    var header           = document.getElementById('header');
-    var navigationHeader = document.getElementById('navigation_header');
-    var content          = document.getElementById('content');
-    var showSidebar      = false;
+const menuHamburguer = document.querySelector('.menu-hamburguer');
+const nav = document.querySelector('.navbar');
+const links = document.querySelectorAll('.navbar-links li a');
 
-    function toggleSidebar()
-    {
-        showSidebar = !showSidebar;
-        if(showSidebar)
-        {
-            navigationHeader.style.marginLeft = '-10vw';
-            navigationHeader.style.animationName = 'showSidebar';
-            content.style.filter = 'blur(2px)';
-        }
-        else
-        {
-            navigationHeader.style.marginLeft = '-100vw';
-            navigationHeader.style.animationName = '';
-            content.style.filter = '';
-        }
-    }
+let swiper = createSwiper(".mySwiper", ".swiper-pagination", ".swiper-button-next", ".swiper-button-prev");
+let header = document.getElementById('header');
 
-    function closeSidebar()
-    {
-        if(showSidebar)
-        {
-            showSidebar = true;
-            toggleSidebar();
-        }
-    }
+function createSwiper(container, pagination, nextButton, prevButton) {
+  return new Swiper(container, {
+    slidesPerView: handleWidth(),
+    spaceBetween: 30,
+    pagination: {
+      el: pagination,
+      clickable: true,
+    },
+    navigation: {
+      nextEl: nextButton,
+      prevEl: prevButton,
+    },
+  });
+}
 
-    window.addEventListener('resize', function(event) {
-        if(window.innerWidth > 1050 && showSidebar) 
-        {  
-            showSidebar = true;
-            toggleSidebar();
-        }
-    });
-    /*fim header js*/
+function handleWidth() {
+  let getWidth = window.innerWidth || document.documentElement.clientWidth;
+  let slideShow = 3;
+
+  if (getWidth < 1001) {
+    slideShow = 2;
+  }
+
+  if (getWidth < 700) {
+    slideShow = 1;
+  }
+
+  return slideShow
+}
+
+menuHamburguer.addEventListener('click', () => {
+  nav.classList.toggle('active');
+});
+
+links.forEach(item => {
+  item.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  })
+})
+
+window.addEventListener('resize', () => {
+  swiper.params.slidesPerView = handleWidth();
+  swiper.update();
+})
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY >= 200) {
+    header.style.background = '#191919'
+  } else {
+    header.style.background = 'transparent'
+  }
+
+})
+    

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>Gerador de Senha</title>
+</head>
+
+<body>
+    
+<section id="content" class="background">
+    <div class="container">
+        <p>Gerador de Senha</p>
+        <div class="wrapper">
+            <div class="input-box">
+                <input id="password" type="text" disabled>
+                <span id="copy" onclick="copyPassword()">Copiar</span>
+            </div>
+
+            <div class="pass-settings">
+                <label class="title">Configuração da Senha</label>
+                <ul class="options">
+                    <!--opção: Minúsculo-->
+                    <li class="option">
+                        <input id="lowercase" type="checkbox" checked>
+                        <label for="lowercase">Minúsculo (a-z)</label>
+                    </li>
+
+                    <!--opção: Maiúscula-->
+                    <li class="option">
+                        <input id="uppercase" type="checkbox">
+                        <label for="uppercase">Maiúscula (A-Z)</label>
+                    </li>
+
+                    <!--opção: Números-->
+                    <li class="option">
+                        <input id="numbers" type="checkbox" checked>
+                        <label for="numbers">Números (0-9)</label>
+                    </li>
+
+                    <!--opção: Símbolos-->
+                    <li class="option">
+                        <input id="symbols" type="checkbox" checked>
+                        <label for="symbols">Símbolos (!-$+^)</label>
+                    </li>
+
+                    <!--opção: Excluir Duplicado-->
+                    <li class="option">
+                        <input id="exc-duplicate" type="checkbox">
+                        <label for="exc-duplicate">Excluir Duplicado</label>
+                    </li>
+
+                    <!--opção: Incluir Espaços-->
+                    <li class="option">
+                        <input id="spaces" type="checkbox">
+                        <label for="spaces">Incluir Espaços</label>
+                    </li>
+                </ul>                
+            </div>
+
+            <button id="generate" class="generate-btn" 
+            onclick="generatePassword()" >Gerar Senhar</button>
+        
+        </div>
+    </div>
+</section>
+    <script src="script.js" type="text/javascript"></script>
+    
+</body>
+
+</html>
